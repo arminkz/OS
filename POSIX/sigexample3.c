@@ -3,12 +3,6 @@
 #include <unistd.h>
 #include <signal.h>
 
-//Handles Kill Interrupt
-void killHandler(int signum){
-  printf("[PID] : %d - KILL INTERRUPT \n",getpid());
-  return;
-}
-
 //Handles Interrupts on Child Termination (Executes on Parent)
 void childHandler(int signum){
   printf("[PID] : %d - CHILD INTERRUPT \n",getpid());
@@ -24,18 +18,31 @@ int main() {
 
   //Register SIGCHLD
   signal(SIGCHLD,childHandler);
-  //Register SIGKILL
-  if(signal(SIGKILL,killHandler)==SIG_ERR)
-  printf("[ERR] : cannot register SIGKILL (signal blocked by OS !)\n");
 
-  int p = fork();
-  if(p==0){
-    printf("[PID] : %d - EXITING\n",getpid());
-    exit(1);
-  }else{
-    //Send Kill Signal
-    //kill(getpid(),SIGKILL);
-    wait(NULL);
+  int i = 0;
+  pid_t pid[5];
+  for(i=0;i<5;i++){
+    pid[i] = fork();
+    if(!pid[i]){
+      printf("[PID] : %d - EXITING...\n",getpid());
+      exit(i);
+    }
   }
+
+  //Parent Only
+
+  //Wait for all Childs to Finish
+  for(i=0;i<5;i++){
+    waitpid(pid[i],NULL,0);
+  }
+
+  //Print Childs
+  printf("My Childs : \n");
+  for(i=0;i<5;i++){
+    printf("%d ",pid[i]);
+  }
+  printf("\n");
+
+
   return 0;
 }
