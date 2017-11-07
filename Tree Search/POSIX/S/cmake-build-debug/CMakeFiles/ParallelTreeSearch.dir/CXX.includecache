@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/armin/CLionProjects/POSIX/S/Tree.h
+TreeNode.h
+/Users/armin/CLionProjects/POSIX/S/TreeNode.h
+
+/Users/armin/CLionProjects/POSIX/S/TreeNode.h
+vector
+-
+
+/Users/armin/CLionProjects/POSIX/S/main.cpp
+iostream
+-
+queue
+-
+pthread.h
+-
+time.h
+-
+Tree.h
+/Users/armin/CLionProjects/POSIX/S/Tree.h
+
