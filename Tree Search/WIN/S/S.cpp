@@ -19,14 +19,14 @@ void printTree();
 void search();
 
 int main() {
-    cout << "\033[1;30;44m Single Threaded Tree Search v0.1 - POSIX Version \033[0m\n";
+    cout << "Single Threaded Tree Search v0.1 - WINDOWS Version";
 
     T = new Tree;
 
     fillTreeRandom();
     printTree();
 
-    cout << endl << "\033[33mPlease Enter Target : \033[0m\n";
+    cout << endl << "Please Enter Target :";
     cin >> target ;
     cout << endl;
 
@@ -89,7 +89,7 @@ void search(){
         TreeNode* node = nodesToPrint.front();
         nodesToPrint.pop();
         if(node->data==target){
-            printf("\033[30;42mmain() : Found the Target !\033[0m\n");
+            printf("main() : Found the Target !\n");
             return;
         }
         //add children
@@ -99,6 +99,6 @@ void search(){
         }
     }
     cout << endl;
-    printf("\033[30;41mmain() : No Match Found !\033[0m\n");
-    pthread_exit(NULL);
+    printf("main() : No Match Found !\n");
+    return;
 }
