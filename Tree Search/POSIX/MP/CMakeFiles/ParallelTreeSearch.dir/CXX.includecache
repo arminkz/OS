@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/Monitor.h
+stdlib.h
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/stdlib.h
+stdio.h
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/stdio.h
+string.h
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/string.h
+sys/times.h
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/sys/times.h
+
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/Tree.h
+TreeNode.h
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/TreeNode.h
+
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/TreeNode.h
+vector
+-
+
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/main.cpp
+iostream
+-
+queue
+-
+unistd.h
+-
+pthread.h
+-
+time.h
+-
+sys/wait.h
+-
+Monitor.h
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/Monitor.h
+Tree.h
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/Tree.h
+

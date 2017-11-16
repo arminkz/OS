@@ -5,7 +5,7 @@
 #include "Tree.h"
 
 #define BRANCH_FACTOR 5
-#define DATA_MAX 1000
+#define DATA_COUNT 1000000
 
 using namespace std;
 
@@ -13,7 +13,7 @@ Tree* T;
 
 int target;
 
-void fillTreeRandom();
+void fillTree();
 void printTree();
 void search();
 
@@ -24,8 +24,8 @@ int main() {
 
     T = new Tree;
 
-    fillTreeRandom();
-    printTree();
+    fillTree();
+    //printTree();
 
     cout << endl << "\033[33mPlease Enter Target : \033[0m\n";
     cin >> target ;
@@ -36,16 +36,17 @@ int main() {
     search();
 
     printf("Time taken: %.3fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
-    printf("CPU Usage: %f",getCPU());
+    printf("CPU Usage: %f \n",getCPU());
+    printf("RAM Usage: %d KB\n",getRAM());
     return 0;
 }
 
-void fillTreeRandom() {
+void fillTree() {
     srand(time(NULL));
-    long nodecount = 200;
+    long nodecount = DATA_COUNT;
     cout << "Creating Tree with " << nodecount << " nodes ..." << endl;
     queue<TreeNode*> nodesToFill;
-    T->root = new TreeNode(rand() % DATA_MAX + 1);
+    T->root = new TreeNode(0);
     nodesToFill.push(T->root);
     int n = 1;
     bool isTerminated = false;
@@ -55,7 +56,7 @@ void fillTreeRandom() {
         //put children
         int childcount = BRANCH_FACTOR;
         for(int i=0;i<childcount;i++){
-            TreeNode* child = new TreeNode(rand() % DATA_MAX + 1);
+            TreeNode* child = new TreeNode(n);
             node->children.push_back(child);
             nodesToFill.push(child);
             n++;

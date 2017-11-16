@@ -1,3 +1,0 @@
-/Users/armin/Documents/OS/Tree Search/POSIX/S/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/armin/Documents/OS/Tree Search/POSIX/S/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/armin/Documents/OS/Tree Search/POSIX/S/cmake-build-debug/CMakeFiles/ParallelTreeSearch.dir

@@ -1,0 +1,3 @@
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/CMakeFiles/rebuild_cache.dir
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/CMakeFiles/edit_cache.dir
+/home/armin/Desktop/OS/Tree Search/POSIX/MP/CMakeFiles/ParallelTreeSearch.dir
