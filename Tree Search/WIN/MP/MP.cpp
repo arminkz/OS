@@ -77,7 +77,12 @@ int main(int argc , char* argv[]) {
 
 
 		for (int i = 0; i < BRANCH_FACTOR; i++) {
-			WaitForSingleObject(&pi[i], INFINITE);
+			WaitForSingleObject(pi[i].hProcess, INFINITE);
+		}
+		
+		for (int i = 0; i < BRANCH_FACTOR; i++) {
+			CloseHandle( pi[i].hProcess );
+			CloseHandle( pi[i].hThread );
 		}
 
 		printf("Time taken: %.3fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);

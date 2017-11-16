@@ -59,7 +59,9 @@ int main() {
 		}
 	}
 
-	WaitForMultipleObjects(BRANCH_FACTOR, threads, TRUE, INFINITE);
+	for (int i = 0; i < BRANCH_FACTOR; i++) {
+		WaitForSingleObject(threads[i], INFINITE);
+	}
 
 	printf("Time taken: %.3fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);
 	printf("CPU Usage: %.3f \n",getCPU());
