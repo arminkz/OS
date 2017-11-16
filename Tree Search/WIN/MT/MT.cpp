@@ -3,10 +3,11 @@
 #include <time.h>
 #include <windows.h>
 
+#include "Monitor.h"
 #include "Tree.h"
 
 #define BRANCH_FACTOR 5
-#define DATA_MAX 1000
+#define DATA_COUNT 1000000
 
 using namespace std;
 
@@ -17,16 +18,18 @@ Tree* T;
 int target;
 TreeNode * threadStartNode[BRANCH_FACTOR];
 
-void fillTreeRandom();
+void fillTree();
 void printTree();
 DWORD WINAPI search(void *);
 
 int main() {
 	cout << "Multi Threaded Tree Search v0.1 - WINDOWS Version \n";
 
+	initCPUMonitor();
+	
 	T = new Tree;
 
-	fillTreeRandom();
+	fillTree();
 	//printTree();
 
 	cout << endl << "Please Enter Target : \n";
@@ -59,16 +62,17 @@ int main() {
 	WaitForMultipleObjects(BRANCH_FACTOR, threads, TRUE, INFINITE);
 
 	printf("Time taken: %.3fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);
+	printf("CPU Usage: %.3f \n",getCPU());
+	printf("RAM Usage: %d KB \n",getRAM());
 	system("PAUSE");
 	return 0;
 }
 
-void fillTreeRandom() {
-	srand(time(NULL));
-	long nodecount = 1000000;
+void fillTree() {
+	long nodecount = DATA_COUNT;
 	cout << "Creating Tree with " << nodecount << " nodes ..." << endl;
 	queue<TreeNode*> nodesToFill;
-	T->root = new TreeNode(rand() % DATA_MAX + 1);
+	T->root = new TreeNode(0);
 	nodesToFill.push(T->root);
 	int n = 1;
 	bool isTerminated = false;
@@ -78,7 +82,7 @@ void fillTreeRandom() {
 		//put children
 		int childcount = BRANCH_FACTOR;
 		for (int i = 0;i<childcount;i++) {
-			TreeNode* child = new TreeNode(rand() % DATA_MAX + 1);
+			TreeNode* child = new TreeNode(n);
 			node->children.push_back(child);
 			nodesToFill.push(child);
 			n++;

@@ -4,10 +4,11 @@
 #include <windows.h>
 #include <string>
 
+#include "Monitor.h"
 #include "Tree.h"
 
 #define BRANCH_FACTOR 5
-#define DATA_MAX 1000
+#define DATA_COUNT 1000000
 
 using namespace std;
 
@@ -88,14 +89,18 @@ int main(int argc , char* argv[]) {
 		target = stoi(argv[2]);
 
 		pStartNode = T->root->children[id];
+		
+		initCPUMonitor();
 		search(pStartNode);
+		printf("[%d] CPU Usage: %.3f \n",id,getCPU());
+		printf("[%d] RAM Usage: %d KB \n",id ,getRAM());
 	}
 
 	return 0;
 }
 
 void fillTree() {
-	long nodecount = 200;
+	long nodecount = DATA_COUNT;
 	//cout << "Creating Tree with " << nodecount << " nodes ..." << endl;
 	queue<TreeNode*> nodesToFill;
 	T->root = new TreeNode(0);
