@@ -1,8 +1,7 @@
 #include <iostream>
 #include <queue>
-#include <pthread.h>
-#include <time.h>
 
+#include "Monitor.h"
 #include "Tree.h"
 
 #define BRANCH_FACTOR 5
@@ -21,6 +20,8 @@ void search();
 int main() {
     cout << "\033[1;30;44m Single Threaded Tree Search v0.1 - POSIX Version \033[0m\n";
 
+    initCPUMonitor();
+
     T = new Tree;
 
     fillTreeRandom();
@@ -35,6 +36,7 @@ int main() {
     search();
 
     printf("Time taken: %.3fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    printf("CPU Usage: %f",getCPU());
     return 0;
 }
 

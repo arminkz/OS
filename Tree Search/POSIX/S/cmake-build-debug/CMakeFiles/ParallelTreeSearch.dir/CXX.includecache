@@ -6,23 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/armin/CLionProjects/POSIX/S/Tree.h
-TreeNode.h
-/Users/armin/CLionProjects/POSIX/S/TreeNode.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/Monitor.h
+stdlib.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/stdlib.h
+stdio.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/stdio.h
+string.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/string.h
+sys/times.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/sys/times.h
 
-/Users/armin/CLionProjects/POSIX/S/TreeNode.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/Tree.h
+TreeNode.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/TreeNode.h
+
+/Users/armin/Documents/OS/Tree Search/POSIX/S/TreeNode.h
 vector
 -
 
-/Users/armin/CLionProjects/POSIX/S/main.cpp
+/Users/armin/Documents/OS/Tree Search/POSIX/S/main.cpp
 iostream
 -
 queue
 -
-pthread.h
--
-time.h
--
+Monitor.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/Monitor.h
 Tree.h
-/Users/armin/CLionProjects/POSIX/S/Tree.h
+/Users/armin/Documents/OS/Tree Search/POSIX/S/Tree.h
 

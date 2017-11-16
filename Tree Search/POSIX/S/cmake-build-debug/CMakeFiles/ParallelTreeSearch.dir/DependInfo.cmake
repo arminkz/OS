@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/armin/CLionProjects/POSIX/S/main.cpp" "/Users/armin/CLionProjects/POSIX/S/cmake-build-debug/CMakeFiles/ParallelTreeSearch.dir/main.cpp.o"
+  "/Users/armin/Documents/OS/Tree Search/POSIX/S/main.cpp" "/Users/armin/Documents/OS/Tree Search/POSIX/S/cmake-build-debug/CMakeFiles/ParallelTreeSearch.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
