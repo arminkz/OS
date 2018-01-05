@@ -5,8 +5,8 @@
 #include<string.h>
 #include<unistd.h>
 
-#define BUFFER_LENGTH 256               ///< The buffer length (crude but fine)
-static char receive[BUFFER_LENGTH];     ///< The receive buffer from the LKM
+#define BUFFER_LENGTH 256
+static char receive[BUFFER_LENGTH];
 
 int main(){
    int ret, fd;
@@ -30,14 +30,15 @@ int main(){
    char stringToSend[BUFFER_LENGTH];
    
    printf("Type in a short string to send to the kernel module:\n");
-   scanf("%s", stringToSend);                // Read in a string (with spaces)
+   scanf("%s", stringToSend);
    printf("Writing message to the device [%s].\n", stringToSend);
    ret = write(fd, stringToSend, strlen(stringToSend)); // Send the string to the LKM
    if (ret < 0){
       perror("Kernel module refused the message : ");
       return errno;
+   }else{
+      printf("Kernel module accepted the message !\n");
    }
 
-   printf("End of the program\n");
    return 0;
 }
